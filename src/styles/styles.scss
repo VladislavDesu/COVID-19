@@ -1,52 +1,5 @@
-@font-face {
-   font-family: "Gelion";
-   src:
-      url("../fonts/gelion-regular-webfont.woff2") format("woff2"),
-      url("../fonts/gelion-regular-webfont.woff") format("woff");
-   font-display: swap;
-   font-style: normal;
-   font-weight: 400;
-}
-
-@font-face {
-   font-family: "Gelion";
-   src:
-      url("../fonts/gelion-medium-webfont.woff2") format("woff2"),
-      url("../fonts/gelion-medium-webfont.woff") format("woff");
-   font-display: swap;
-   font-style: normal;
-   font-weight: 500;
-}
-
-@font-face {
-   font-family: "Gelion";
-   src:
-      url("../fonts/gelion-semibold-webfont.woff2") format("woff2"),
-      url("../fonts/gelion-semibold-webfont.woff") format("woff");
-   font-display: swap;
-   font-style: normal;
-   font-weight: 600;
-}
-
-@font-face {
-   font-family: "Gelion";
-   src:
-      url("../fonts/gelion-bold-webfont.woff2") format("woff2"),
-      url("../fonts/gelion-bold-webfont.woff") format("woff");
-   font-display: swap;
-   font-style: normal;
-   font-weight: 700;
-}
-
-@font-face {
-   font-family: "Red Hat Display";
-   src:
-      url("../fonts/RedHatDisplay-Bold.woff2") format("woff2"),
-      url("../fonts/RedHatDisplay-Bold.woff") format("woff");
-   font-display: swap;
-   font-style: normal;
-   font-weight: 700;
-}
+@import "libs/normalize";
+@import "fonts";
 
 body {
    margin: 0;
@@ -84,7 +37,7 @@ img {
    right: 0;
    width: 1087px;
    height: 812px;
-   background-image: url("../img/girl.png");
+   background-image: url("../images/girl.png");
    background-repeat: no-repeat;
 }
 
@@ -92,6 +45,8 @@ img {
    position: relative;
    padding-top: 33px;
    padding-bottom: 206px;
+   padding-right: 20px;
+   padding-left: 20px;
    max-width: 1442px;
    margin: 0 auto;
 }
@@ -159,7 +114,7 @@ img {
    padding-left: 42px;
    border: 2px solid #fb4c47;
    border-radius: 46px;
-   
+
    font-weight: 500;
    font-size: 18px;
    line-height: 22px;
@@ -246,16 +201,6 @@ img {
    padding-bottom: 187px;
 }
 
-.about-virus__wrapper::before {
-   content: "";
-   position: absolute;
-   top: -153px;
-   left: 0;
-   width: 966px;
-   height: 932px;
-   background-image: url("../img/about-virus-img.png");
-}
-
 .about-virus__section {
    display: flex;
    flex-direction: column;
@@ -315,6 +260,8 @@ img {
    margin: 0 auto;
    margin-top: 100px;
    padding: 0;
+   padding-right: 20px;
+   padding-left: 20px;
    list-style: none;
 }
 
@@ -322,7 +269,7 @@ img {
    position: relative;
    box-sizing: border-box;
    max-width: 460px;
-   height: 575px;
+   min-height: 575px;
    padding-top: 65px;
    padding-right: 45px;
    padding-bottom: 100px;
@@ -388,6 +335,8 @@ img {
 
 .advice__wrapper {
    padding-bottom: 110px;
+   padding-right: 20px;
+   padding-left: 20px;
    text-align: center;
 }
 
@@ -463,7 +412,7 @@ img {
 .advice__list-wrapper {
    position: relative;
    margin-top: 188px;
-   width: 580px;
+   max-width: 580px;
    margin-left: 34px;
 }
 
@@ -622,7 +571,7 @@ img {
 .dashboard__table {
    width: 100%;
    border-collapse: collapse;
-   
+
 }
 
 .dashboard__col-one {
@@ -668,15 +617,16 @@ tr:last-child td {
 }
 
 .questions__wrapper {
-   width: 790px;
+   max-width: 790px;
    margin: 0 auto;
-   margin-bottom: 160px;
+   padding-bottom: 160px;
    text-align: center;
 }
 
 .questions__title {
    margin: 0;
-   margin-bottom: 49px;;
+   margin-bottom: 49px;
+   ;
    font-weight: 500;
    font-size: 64px;
    line-height: 77px;
@@ -732,9 +682,14 @@ tr:last-child td {
 
 .footer__wrapper {
    display: flex;
-   justify-content: space-between;
-   width: 1444px;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   align-items: center;
+   max-width: 1444px;
+   padding-right: 20px;
+   padding-left: 20px;
    margin: 0 auto;
+   box-sizing: border-box;
 }
 
 .footer__logo {
@@ -768,4 +723,245 @@ tr:last-child td {
    line-height: 28px;
    color: #415e56;
    text-align: center;
+}
+
+@media (max-width: 1279px) {
+   .dashboard__toggle--right {
+      top: -36px;
+      right: -22px;
+   }
+
+   .footer__wrapper {
+      flex-direction: column;
+   }
+
+   .main-menu__list {
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+   }
+
+   .footer-nav {
+      flex-grow: 1;
+      width: 100%;
+   }
+}
+
+@media (max-width: 867px) {
+
+   .advice__item {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .advice__list-wrapper {
+      margin: 0;
+      margin-top: 20px;
+      order: 1;
+   }
+
+   .advice__item:nth-child(2) .advice__list-wrapper,
+   .advice__item:nth-child(3) .advice__list-wrapper,
+   .advice__item:nth-child(4) .advice__list-wrapper,
+   .advice__item:nth-child(5) .advice__list-wrapper {
+      margin: 0;
+      margin-top: 20px;
+   }
+
+   .advice__list-title {
+      font-size: 40px;
+   }
+
+   .advice__list-number {
+      display: none;
+   }
+
+   .advice__list-desc {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 40px;
+   }
+
+   .header__top,
+   .footer__wrapper {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .header__main-menu {
+      margin-left: 0;
+      margin-bottom: 20px;
+   }
+
+   .transmit__list {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .transmit__item {
+      margin-bottom: 20px;
+   }
+
+   .header::before {
+      background-size: 700px;
+      background-position: center right;
+   }
+
+   .header__top {
+      margin-bottom: 100px;
+   }
+
+   .header__promo-btn,
+   .header__desc,
+   .header__slogan,
+   .header__alert {
+      font-size: 22px;
+      line-height: 28px;
+   }
+
+   .about-virus__wrapper {
+      padding-left: 20px;
+      padding-right: 50px;
+   }
+
+   .about-virus__wrapper::before {
+      display: none;
+   }
+
+   .dashboard__toggle--right {
+      top: -36px;
+      right: -22px;
+   }
+
+   .footer__social {
+      padding: 20px 0;
+   }
+}
+
+@media (max-width: 567px) {
+   .header::before {
+      display: none;
+   }
+
+   .about-virus__wrapper {
+      padding-right: 20px;
+   }
+
+   .about-virus__wrapper,
+   .transmit__desc,
+   .symptomps__desc {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+   .second-title {
+      font-size: 24px;
+   }
+
+   .about-virus__desc {
+      line-height: 30px;
+   }
+
+
+
+   .main-menu__list {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .header__top-btn {
+      margin-left: 0;
+   }
+
+   .main-menu__item {
+      margin-right: 0;
+   }
+
+   .header__wrapper {
+      padding-bottom: 0;
+   }
+
+   .about-virus__wrapper,
+   .transmit__wrapper,
+   .symptomps__wrapper {
+      padding-bottom: 40px;
+   }
+
+   .transmit__list-title {
+      font-size: 26px;
+   }
+
+   .transmit__list-img img {
+      display: block;
+   }
+
+   .transmit__list-img {
+      height: auto;
+   }
+
+   .transmit__item {
+      min-height: auto;
+      padding: 20px;
+   }
+
+   .questions__title {
+      padding-right: 20px;
+      padding-left: 20px;
+      font-size: 40px;
+   }
+
+   .dashboard__title {
+      font-size: 40px;
+   }
+
+   .questions__btn {
+      position: static;
+      margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+   }
+
+   .questions__email input[type="email"] {
+      padding: 20px;
+      font-size: 17px;
+   }
+
+   .questions__form,
+   .footer__copyright,
+   .reports__wrapper,
+   .reports__dashboard {
+      padding-right: 20px;
+      padding-left: 20px;
+   }
+
+   .main-menu__link:hover::before {
+      display: none;
+   }
+
+   .dashboard__table tbody {
+      & tr {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+
+   .dashboard__title {
+      margin-right: 10px;
+   }
+
+   .dashboard__col-one {
+      width: 100%;
+   }
+
+   .dashboard__country-count {
+      font-size: 22px;
+   }
 }
